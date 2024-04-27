@@ -8,7 +8,7 @@
     package:
       name:
         - htop
-        - nvim
+        # - neovim
         - brave-browser
         - firefox
         - flatpak
@@ -19,7 +19,7 @@
         - gparted
         - vlc
         - nfs-common
-        - libreoffice
+        # - libreoffice
         - chezmoi
 
   - name: copy wallpaper file
