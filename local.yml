@@ -19,7 +19,7 @@
         - discord
         - gparted
         - vlc
-        - nfs-common
+        - nfs-utils
         - chezmoi
 
   - name: copy wallpaper file
