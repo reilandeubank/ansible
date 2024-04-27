@@ -42,17 +42,17 @@
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
 
-  # - name: Clone LazyVim repo
-  #   git: 
-  #     repo: https://github.com/LazyVim/starter
-  #     dest: ~/.config/nvim
-  #     clone: yes
-  #     force: yes
-  #
-  # - name: Remove git metadata from nvim config 
-  #   file:
-  #     path: ~/.config/nvim/.git
-  #     state: absent
+  - name: Clone LazyVim repo
+    git:
+      repo: https://github.com/LazyVim/starter
+      dest: ~/.config/nvim
+      clone: yes
+      force: yes
+
+  - name: Remove git metadata from nvim config
+    file:
+      path: ~/.config/nvim/.git
+      state: absent
 
   - name: Create mount point directory
     file:
@@ -77,9 +77,9 @@
     become_user: reilandeubank
     command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       
-  - name: Install flatpaks
-    become_user: reilandeubank
-    command: flatpak install flathub cafe.avery.Delfin org.libreoffice.LibreOffice
+  # - name: Install flatpaks
+  #   become_user: reilandeubank
+  #   command: flatpak install flathub cafe.avery.Delfin org.libreoffice.LibreOffice
 
   - name: Install Rust via rustup
     shell: >
