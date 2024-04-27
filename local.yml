@@ -7,6 +7,7 @@
   - name: install packages
     package:
       name:
+        - git
         - htop
         - neofetch
         - neovim
@@ -20,7 +21,7 @@
         - gparted
         - vlc
         - nfs-utils
-        # - chezmoi
+        - chezmoi
 
   - name: copy wallpaper file
     copy:
