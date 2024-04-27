@@ -8,7 +8,7 @@
     package:
       name:
         - htop
-        # - neovim
+        - neovim
         # - brave-browser
         - firefox
         - flatpak
@@ -19,8 +19,8 @@
         - gparted
         - vlc
         - nfs-common
-        # - libreoffice
-        # - chezmoi
+        - libreoffice
+        - chezmoi
 
   - name: copy wallpaper file
     copy:
@@ -41,20 +41,20 @@
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
 
-  # - name: Create mount point directory
-  #   file:
-  #     path: /mnt/media-share
-  #     state: directory
-  #
-  # - name: Add nfs entry to fstab
-  #   lineinfile:
-  #     path: /etc/fstab
-  #     line: "192.168.0.101:/mnt/media/media-share /mnt/media-share nfs default 0 0"
-  #     insertafter: EOF
+  - name: Create mount point directory
+    file:
+      path: /mnt/media-share
+      state: directory
 
-  # - name: Initialize dotfiles repo
-  #   become_user: reilandeubank
-  #   command: chezmoi init https://github.com/reilandeubank/dotfiles.git
+  - name: Add nfs entry to fstab
+    lineinfile:
+      path: /etc/fstab
+      line: "192.168.0.101:/mnt/media/media-share /mnt/media-share nfs default 0 0"
+      insertafter: EOF
+
+  - name: Initialize dotfiles repo
+    become_user: reilandeubank
+    command: chezmoi init https://github.com/reilandeubank/dotfiles.git
 
   - name: Apply dotfiles configuration
     become_user: reilandeubank
