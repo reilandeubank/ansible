@@ -8,6 +8,7 @@
     package:
       name:
         - htop
+        - neofetch
         - neovim
         # - brave-browser
         - firefox
@@ -19,7 +20,6 @@
         - gparted
         - vlc
         - nfs-common
-        - libreoffice
         - chezmoi
 
   - name: copy wallpaper file
@@ -71,3 +71,11 @@
   - name: Apply dotfiles configuration
     become_user: reilandeubank
     command: chezmoi apply
+
+  - name: Add flathub repository
+    become_user: reilandeubank
+    command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      
+  - name: Install flatpaks
+    become_user: reilandeubank
+    command: flatpak install flathub cafe.avery.Delfin com.github.IsmaelMartinez.teams_for_linux org.ryujinx.Ryujinx com.brave.Browser org.libreoffice.LibreOffice
