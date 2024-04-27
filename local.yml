@@ -15,7 +15,7 @@
         - flatpak
         - steam
         - kitty
-        - github-desktop
+        # - github-desktop
         - discord
         - gparted
         - vlc
