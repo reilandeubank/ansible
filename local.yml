@@ -20,7 +20,7 @@
         - vlc
         - nfs-common
         # - libreoffice
-        - chezmoi
+        # - chezmoi
 
   - name: copy wallpaper file
     copy:
