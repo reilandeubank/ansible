@@ -79,3 +79,9 @@
   - name: Install flatpaks
     become_user: reilandeubank
     command: flatpak install flathub cafe.avery.Delfin com.github.IsmaelMartinez.teams_for_linux org.ryujinx.Ryujinx com.brave.Browser org.libreoffice.LibreOffice
+
+  - name: Install Rust via rustup
+    shell: >
+      curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+    args:
+      executable: /bin/bash
