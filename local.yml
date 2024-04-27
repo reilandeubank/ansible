@@ -16,7 +16,7 @@
         - steam
         - kitty
         # - github-desktop
-        - discord
+        # - discord
         - gparted
         - vlc
         - nfs-utils
