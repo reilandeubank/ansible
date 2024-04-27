@@ -41,6 +41,18 @@
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
 
+  - name: Clone LazyVim repo
+    git: 
+      repo: https://github.com/LazyVim/starter
+      dest: ~/.config/nvim
+      clone: yes
+      force: yes
+
+  - name: Remove git metadata from nvim config 
+    file:
+      path: ~/.config/nvim/.git
+      state: absent
+
   - name: Create mount point directory
     file:
       path: /mnt/media-share
