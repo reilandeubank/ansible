@@ -30,6 +30,20 @@
       owner: root
       group: root
 
+  - name: copy wallpaper file
+    copy:
+      src: files/nyc.jpeg
+      dest: /usr/share/backgrounds/nyc.jpg
+      owner: root
+      group: root
+
+  - name: copy wallpaper file
+    copy:
+      src: files/amsterdam.jpeg
+      dest: /usr/share/backgrounds/amsterdam.jpg
+      owner: root
+      group: root
+
   - name: set wallpaper
     become_user: reilandeubank
     dconf:
