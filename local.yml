@@ -76,7 +76,7 @@
   - name: Add nfs entry to fstab
     lineinfile:
       path: /etc/fstab
-      line: "192.168.0.101:/mnt/media/media-share /mnt/media-share nfs default 0 0"
+      line: "192.168.0.100:/mnt/media/media-share /mnt/media-share nfs default 0 0"
       insertafter: EOF
 
   - name: Initialize dotfiles repo
